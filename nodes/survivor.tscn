@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://hseuk2y7t3xt"]
+
+[ext_resource type="Script" path="res://nodes/survivor.gd" id="1_hgspj"]
+[ext_resource type="Texture2D" uid="uid://q6ui8ouabouu" path="res://images/sprites.png" id="2_6iy2e"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7u33y"]
+radius = 6.0
+
+[node name="Survivor" type="CharacterBody2D"]
+script = ExtResource("1_hgspj")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_6iy2e")
+region_enabled = true
+region_rect = Rect2(12, 0, 12, 12)
+
+[node name="Collider" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_7u33y")
+
+[node name="Agent" type="NavigationAgent2D" parent="."]
+unique_name_in_owner = true
+avoidance_enabled = true
+
+[node name="FollowTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 0.5
+autostart = true
+
+[connection signal="timeout" from="FollowTimer" to="." method="_on_follow_timer_timeout"]

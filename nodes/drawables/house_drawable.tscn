@@ -1,0 +1,88 @@
+[gd_scene load_steps=4 format=3 uid="uid://cxhkd7smpxf4y"]
+
+[ext_resource type="PackedScene" uid="uid://ck0olci42emrq" path="res://nodes/drawables/drawable.tscn" id="1_kkvec"]
+[ext_resource type="Script" path="res://nodes/drawables/house_drawable.gd" id="2_3v8pr"]
+[ext_resource type="TileSet" uid="uid://da6i5shbn3h7x" path="res://resources/tiles.tres" id="3_4yec6"]
+
+[node name="HouseDrawable" instance=ExtResource("1_kkvec")]
+script = ExtResource("2_3v8pr")
+
+[node name="2x2" type="Node2D" parent="." index="0"]
+
+[node name="Tiles1" type="TileMap" parent="2x2" index="0"]
+visible = false
+texture_filter = 1
+tile_set = ExtResource("3_4yec6")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 0, 2, 1, 196608, 2, 65536, 0, 4, 65537, 196608, 4)
+
+[node name="2x3" type="Node2D" parent="." index="1"]
+
+[node name="Tiles1" type="TileMap" parent="2x3" index="0"]
+visible = false
+texture_filter = 1
+tile_set = ExtResource("3_4yec6")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 0, 2, 65536, 0, 3, 65537, 196608, 3, 131072, 0, 4, 131073, 196608, 4, 1, 196608, 2)
+
+[node name="2x4" type="Node2D" parent="." index="2"]
+
+[node name="Tiles1" type="TileMap" parent="2x4" index="0"]
+visible = false
+texture_filter = 1
+tile_set = ExtResource("3_4yec6")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 0, 2, 65536, 0, 3, 65537, 196608, 3, 196608, 0, 4, 131072, 0, 3, 131073, 196608, 3, 196609, 196608, 4, 1, 196608, 2)
+
+[node name="3x2" type="Node2D" parent="." index="3"]
+
+[node name="Tiles1" type="TileMap" parent="3x2" index="0"]
+visible = false
+texture_filter = 1
+tile_set = ExtResource("3_4yec6")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 0, 2, 1, 65536, 2, 65536, 0, 4, 65537, 131072, 4, 2, 196608, 2, 65538, 196608, 4)
+
+[node name="3x3" type="Node2D" parent="." index="4"]
+
+[node name="Tiles1" type="TileMap" parent="3x3" index="0"]
+texture_filter = 1
+tile_set = ExtResource("3_4yec6")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 0, 2, 1, 65536, 2, 65536, 0, 3, 65537, 65536, 3, 131072, 0, 4, 131073, 131072, 4, 2, 196608, 2, 131074, 196608, 4, 65538, 196608, 3)
+
+[node name="3x4" type="Node2D" parent="." index="5"]
+
+[node name="Tiles1" type="TileMap" parent="3x4" index="0"]
+visible = false
+texture_filter = 1
+tile_set = ExtResource("3_4yec6")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 0, 2, 1, 65536, 2, 65536, 0, 3, 65537, 65536, 3, 131072, 0, 3, 131073, 65536, 3, 2, 196608, 2, 131074, 196608, 3, 65538, 196608, 3, 196608, 0, 4, 196610, 196608, 4, 196609, 131072, 4)
+
+[node name="4x2" type="Node2D" parent="." index="6"]
+
+[node name="Tiles1" type="TileMap" parent="4x2" index="0"]
+visible = false
+texture_filter = 1
+tile_set = ExtResource("3_4yec6")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 0, 2, 1, 65536, 2, 65536, 0, 4, 65537, 131072, 4, 3, 196608, 2, 2, 65536, 2, 65539, 196608, 4, 65538, 65536, 4)
+
+[node name="4x3" type="Node2D" parent="." index="7"]
+
+[node name="Tiles1" type="TileMap" parent="4x3" index="0"]
+visible = false
+texture_filter = 1
+tile_set = ExtResource("3_4yec6")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 0, 2, 1, 65536, 2, 3, 196608, 2, 2, 65536, 2, 131072, 0, 4, 131073, 131072, 4, 131074, 65536, 4, 131075, 196608, 4, 65536, 0, 3, 65539, 196608, 3, 65537, 65536, 3, 65538, 65536, 3)
+
+[node name="4x4" type="Node2D" parent="." index="8"]
+
+[node name="Tiles1" type="TileMap" parent="4x4" index="0"]
+visible = false
+texture_filter = 1
+tile_set = ExtResource("3_4yec6")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 0, 2, 1, 65536, 2, 3, 196608, 2, 2, 65536, 2, 65536, 0, 3, 65539, 196608, 3, 65537, 65536, 3, 65538, 65536, 3, 196608, 0, 4, 196609, 131072, 4, 196610, 65536, 4, 196611, 196608, 4, 131072, 0, 3, 131073, 65536, 3, 131074, 65536, 3, 131075, 196608, 3)

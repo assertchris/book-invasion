@@ -1,0 +1,28 @@
+[gd_scene load_steps=13 format=3 uid="uid://c8kqpew3wumws"]
+
+[ext_resource type="Script" path="res://nodes/globals/constants.gd" id="1_q1dni"]
+[ext_resource type="PackedScene" uid="uid://dofu1vc2g5n37" path="res://nodes/screens/game_over_screen.tscn" id="2_74uvm"]
+[ext_resource type="PackedScene" uid="uid://bnfwwpsuui64f" path="res://nodes/screens/menu_screen.tscn" id="3_a1pcb"]
+[ext_resource type="PackedScene" uid="uid://c7tbtijl8mfdp" path="res://nodes/screens/play_screen.tscn" id="4_8ddut"]
+[ext_resource type="PackedScene" uid="uid://bxeugv6yhed63" path="res://nodes/screens/summary_screen.tscn" id="5_em4b8"]
+[ext_resource type="PackedScene" uid="uid://4yyowrtki355" path="res://nodes/drawables/tree_drawable.tscn" id="6_q58vw"]
+[ext_resource type="PackedScene" uid="uid://dgj488ht8d3pe" path="res://nodes/drawables/grave_drawable.tscn" id="7_avvtw"]
+[ext_resource type="PackedScene" uid="uid://cxhkd7smpxf4y" path="res://nodes/drawables/house_drawable.tscn" id="8_o0qp2"]
+[ext_resource type="PackedScene" uid="uid://bl6bfwh4i42" path="res://nodes/drawables/grass_drawable.tscn" id="9_8v3mm"]
+[ext_resource type="PackedScene" uid="uid://o0yqe2fag2k0" path="res://nodes/room.tscn" id="10_i047q"]
+[ext_resource type="PackedScene" uid="uid://c0mtbhv071516" path="res://nodes/player.tscn" id="11_u5jal"]
+[ext_resource type="PackedScene" uid="uid://hseuk2y7t3xt" path="res://nodes/survivor.tscn" id="12_j3xrk"]
+
+[node name="Constants" type="Node"]
+script = ExtResource("1_q1dni")
+game_over_scene = ExtResource("2_74uvm")
+menu_scene = ExtResource("3_a1pcb")
+play_scene = ExtResource("4_8ddut")
+summary_scene = ExtResource("5_em4b8")
+tree_scene = ExtResource("6_q58vw")
+grave_scene = ExtResource("7_avvtw")
+house_scene = ExtResource("8_o0qp2")
+grass_scene = ExtResource("9_8v3mm")
+room_scene = ExtResource("10_i047q")
+player_scene = ExtResource("11_u5jal")
+survivor_scene = ExtResource("12_j3xrk")

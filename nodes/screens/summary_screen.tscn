@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxeugv6yhed63"]
+
+[ext_resource type="PackedScene" uid="uid://c2tu4glg0swsm" path="res://nodes/screens/screen.tscn" id="1_8h8r6"]
+[ext_resource type="Script" path="res://nodes/screens/summary_screen.gd" id="2_acgue"]
+
+[node name="SummaryScreen" instance=ExtResource("1_8h8r6")]
+script = ExtResource("2_acgue")

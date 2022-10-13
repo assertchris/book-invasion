@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://bl6bfwh4i42"]
+
+[ext_resource type="PackedScene" uid="uid://ck0olci42emrq" path="res://nodes/drawables/drawable.tscn" id="1_26uhb"]
+[ext_resource type="Script" path="res://nodes/drawables/grass_drawable.gd" id="2_w4ejo"]
+[ext_resource type="Texture2D" uid="uid://q6ui8ouabouu" path="res://images/sprites.png" id="3_2s5cb"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rjtlh"]
+load_path = "res://.godot/imported/sprites.png-559dbcade2efaac9b0e2bac85e782a41.ctex"
+
+[node name="GrassDrawable" instance=ExtResource("1_26uhb")]
+script = ExtResource("2_w4ejo")
+
+[node name="Sprite1" type="Sprite2D" parent="." index="0"]
+texture_filter = 1
+position = Vector2(6, 6)
+texture = ExtResource("3_2s5cb")
+region_enabled = true
+region_rect = Rect2(108, 0, 12, 12)
+
+[node name="Sprite2" type="Sprite2D" parent="." index="1"]
+texture_filter = 1
+position = Vector2(6, 6)
+texture = SubResource("CompressedTexture2D_rjtlh")
+region_enabled = true
+region_rect = Rect2(120, 0, 12, 12)

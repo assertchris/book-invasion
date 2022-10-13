@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://bnfwwpsuui64f"]
+
+[ext_resource type="PackedScene" uid="uid://c2tu4glg0swsm" path="res://nodes/screens/screen.tscn" id="1_brk0v"]
+[ext_resource type="Script" path="res://nodes/screens/menu_screen.gd" id="2_8on7t"]
+
+[node name="MenuScreen" instance=ExtResource("1_brk0v")]
+script = ExtResource("2_8on7t")
+
+[node name="Center" type="CenterContainer" parent="." index="0"]
+offset_right = 180.0
+offset_bottom = 180.0
+
+[node name="Buttons" type="VBoxContainer" parent="Center" index="0"]
+offset_left = 46.0
+offset_top = 57.0
+offset_right = 134.0
+offset_bottom = 123.0
+
+[node name="PlayButton" type="Button" parent="Center/Buttons" index="0"]
+offset_right = 88.0
+offset_bottom = 31.0
+text = "new game"
+
+[node name="QuitButton" type="Button" parent="Center/Buttons" index="1"]
+unique_name_in_owner = true
+offset_top = 35.0
+offset_right = 88.0
+offset_bottom = 66.0
+text = "quit"
+
+[connection signal="pressed" from="Center/Buttons/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="Center/Buttons/QuitButton" to="." method="_on_quit_button_pressed"]

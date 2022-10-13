@@ -1,0 +1,152 @@
+[gd_scene load_steps=9 format=3 uid="uid://o0yqe2fag2k0"]
+
+[ext_resource type="Script" path="res://nodes/room.gd" id="1_x1jm8"]
+[ext_resource type="Texture2D" uid="uid://q6ui8ouabouu" path="res://images/sprites.png" id="2_kl0sf"]
+[ext_resource type="TileSet" uid="uid://da6i5shbn3h7x" path="res://resources/tiles.tres" id="2_uc205"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_2caxn"]
+vertices = PackedVector2Array(0, 0, 132, 0, 132, 132, 0, 132)
+polygons = [PackedInt32Array(0, 1, 2, 3)]
+outlines = [PackedVector2Array(0, 0, 132, 0, 132, 132, 0, 132)]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cswsd"]
+size = Vector2(132, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cwbix"]
+size = Vector2(12, 132)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_es2ku"]
+size = Vector2(132, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_332j8"]
+size = Vector2(12, 132)
+
+[node name="Room" type="Node2D"]
+script = ExtResource("1_x1jm8")
+metadata/_edit_vertical_guides_ = [66.0]
+metadata/_edit_horizontal_guides_ = [66.0]
+
+[node name="Navigation" type="NavigationRegion2D" parent="."]
+navpoly = SubResource("NavigationPolygon_2caxn")
+
+[node name="Tiles" type="TileMap" parent="."]
+unique_name_in_owner = true
+texture_filter = 1
+tile_set = ExtResource("2_uc205")
+format = 2
+
+[node name="Soliders" type="Node2D" parent="."]
+
+[node name="Survivors" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="Doodads" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="Exits" type="Node2D" parent="."]
+
+[node name="Top" type="Area2D" parent="Exits"]
+
+[node name="Collider" type="CollisionShape2D" parent="Exits/Top" groups=["exit_colliders"]]
+position = Vector2(66, -6)
+shape = SubResource("RectangleShape2D_cswsd")
+
+[node name="Right" type="Area2D" parent="Exits"]
+
+[node name="Collider" type="CollisionShape2D" parent="Exits/Right" groups=["exit_colliders"]]
+position = Vector2(138, 66)
+shape = SubResource("RectangleShape2D_cwbix")
+
+[node name="Bottom" type="Area2D" parent="Exits"]
+
+[node name="Collider" type="CollisionShape2D" parent="Exits/Bottom" groups=["exit_colliders"]]
+position = Vector2(66, 138)
+shape = SubResource("RectangleShape2D_es2ku")
+
+[node name="Left" type="Area2D" parent="Exits"]
+
+[node name="Collider" type="CollisionShape2D" parent="Exits/Left" groups=["exit_colliders"]]
+position = Vector2(-6, 66)
+shape = SubResource("RectangleShape2D_332j8")
+
+[node name="Sanctuaries" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="Top" type="ColorRect" parent="Sanctuaries"]
+offset_left = 48.0
+offset_top = -30.0
+offset_right = 84.0
+offset_bottom = -6.0
+color = Color(0, 0.227451, 1, 1)
+
+[node name="Right" type="ColorRect" parent="Sanctuaries"]
+offset_left = 138.0
+offset_top = 48.0
+offset_right = 162.0
+offset_bottom = 84.0
+color = Color(0, 0.227451, 1, 1)
+
+[node name="Bottom" type="ColorRect" parent="Sanctuaries"]
+offset_left = 48.0
+offset_top = 138.0
+offset_right = 84.0
+offset_bottom = 162.0
+color = Color(0, 0.227451, 1, 1)
+
+[node name="Left" type="ColorRect" parent="Sanctuaries"]
+offset_left = -30.0
+offset_top = 48.0
+offset_right = -6.0
+offset_bottom = 84.0
+color = Color(0, 0.227451, 1, 1)
+
+[node name="Arrows" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="Top" type="Sprite2D" parent="Arrows"]
+texture_filter = 1
+position = Vector2(66, -6)
+texture = ExtResource("2_kl0sf")
+region_enabled = true
+region_rect = Rect2(108, 24, 12, 12)
+
+[node name="Right" type="Sprite2D" parent="Arrows"]
+texture_filter = 1
+position = Vector2(138, 66)
+texture = ExtResource("2_kl0sf")
+region_enabled = true
+region_rect = Rect2(120, 24, 12, 12)
+
+[node name="Bottom" type="Sprite2D" parent="Arrows"]
+texture_filter = 1
+position = Vector2(66, 138)
+texture = ExtResource("2_kl0sf")
+region_enabled = true
+region_rect = Rect2(120, 36, 12, 12)
+
+[node name="Left" type="Sprite2D" parent="Arrows"]
+texture_filter = 1
+position = Vector2(-6, 66)
+texture = ExtResource("2_kl0sf")
+region_enabled = true
+region_rect = Rect2(108, 36, 12, 12)
+
+[node name="Spawns" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="Top" type="Marker2D" parent="Spawns"]
+position = Vector2(66, 24)
+
+[node name="Right" type="Marker2D" parent="Spawns"]
+position = Vector2(108, 66)
+
+[node name="Bottom" type="Marker2D" parent="Spawns"]
+position = Vector2(66, 108)
+
+[node name="Left" type="Marker2D" parent="Spawns"]
+position = Vector2(24, 66)
+
+[connection signal="body_entered" from="Exits/Top" to="." method="_on_top_body_entered"]
+[connection signal="body_entered" from="Exits/Right" to="." method="_on_right_body_entered"]
+[connection signal="body_entered" from="Exits/Bottom" to="." method="_on_bottom_body_entered"]
+[connection signal="body_entered" from="Exits/Left" to="." method="_on_left_body_entered"]

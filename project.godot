@@ -1,0 +1,76 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+_global_script_classes=[{
+"base": "Node2D",
+"class": &"GameDrawable",
+"language": &"GDScript",
+"path": "res://nodes/drawables/drawable.gd"
+}, {
+"base": "CharacterBody2D",
+"class": &"GamePlayer",
+"language": &"GDScript",
+"path": "res://nodes/player.gd"
+}, {
+"base": "Node2D",
+"class": &"GameRoom",
+"language": &"GDScript",
+"path": "res://nodes/room.gd"
+}, {
+"base": "MarginContainer",
+"class": &"GameScreen",
+"language": &"GDScript",
+"path": "res://nodes/screens/screen.gd"
+}, {
+"base": "CharacterBody2D",
+"class": &"GameSurvivor",
+"language": &"GDScript",
+"path": "res://nodes/survivor.gd"
+}, {
+"base": "Node",
+"class": &"Types",
+"language": &"GDScript",
+"path": "res://nodes/globals/constants.gd"
+}]
+_global_script_class_icons={
+"GameDrawable": "",
+"GamePlayer": "",
+"GameRoom": "",
+"GameScreen": "",
+"GameSurvivor": "",
+"Types": ""
+}
+
+[application]
+
+config/name="Invasion"
+run/main_scene="res://nodes/screens/menu_screen.tscn"
+config/features=PackedStringArray("4.0", "Vulkan Mobile")
+config/icon="res://images/icon.svg"
+
+[autoload]
+
+Constants="*res://nodes/globals/constants.tscn"
+Screens="*res://nodes/globals/screens.tscn"
+Generation="*res://nodes/globals/generation.tscn"
+Variables="*res://nodes/globals/variables.tscn"
+
+[display]
+
+window/size/viewport_width=180
+window/size/viewport_height=180
+window/size/window_width_override=720
+window/size/window_height_override=480
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
+[rendering]
+
+vulkan/rendering/back_end=1

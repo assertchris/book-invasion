@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7tbtijl8mfdp"]
+
+[ext_resource type="PackedScene" uid="uid://c2tu4glg0swsm" path="res://nodes/screens/screen.tscn" id="1_fy6pn"]
+[ext_resource type="Script" path="res://nodes/screens/play_screen.gd" id="2_4ak0e"]
+
+[node name="PlayScreen" instance=ExtResource("1_fy6pn")]
+script = ExtResource("2_4ak0e")
+
+[node name="Center" type="CenterContainer" parent="." index="0"]
+offset_right = 180.0
+offset_bottom = 180.0
+mouse_filter = 2
+
+[node name="Stage" type="Control" parent="Center" index="0"]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_left = 90.0
+offset_top = 90.0
+offset_right = 90.0
+offset_bottom = 90.0
+mouse_filter = 2

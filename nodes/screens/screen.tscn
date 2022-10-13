@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://c2tu4glg0swsm"]
+
+[ext_resource type="Script" path="res://nodes/screens/screen.gd" id="1_s7ujs"]
+[ext_resource type="Shader" path="res://nodes/screens/screen.gdshader" id="2_54ynv"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yvan0"]
+shader = ExtResource("2_54ynv")
+shader_parameter/amount = 0.0
+shader_parameter/bandSize = 40.0
+
+[node name="Screen" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_s7ujs")
+
+[node name="Interface" type="CanvasLayer" parent="."]
+
+[node name="Cover" type="ColorRect" parent="Interface"]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_yvan0")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)

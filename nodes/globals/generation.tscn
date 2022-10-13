@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkes3jnlavxd4"]
+
+[ext_resource type="Script" path="res://nodes/globals/generation.gd" id="1_hqjow"]
+[ext_resource type="Texture2D" uid="uid://m88b2fy2abt0" path="res://images/layouts.png" id="2_2vwns"]
+
+[node name="Generation" type="Node"]
+script = ExtResource("1_hqjow")
+layout_texture = ExtResource("2_2vwns")

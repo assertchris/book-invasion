@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://dofu1vc2g5n37"]
+
+[ext_resource type="PackedScene" uid="uid://c2tu4glg0swsm" path="res://nodes/screens/screen.tscn" id="1_dkx54"]
+[ext_resource type="Script" path="res://nodes/screens/game_over_screen.gd" id="2_ox33u"]
+
+[node name="GameOverScreen" instance=ExtResource("1_dkx54")]
+script = ExtResource("2_ox33u")
